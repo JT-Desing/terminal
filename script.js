@@ -464,7 +464,7 @@ function buildCheckoutStepperMarkup() {
   stepper.innerHTML = `
     <button class="checkout-step is-active" type="button" data-step-trigger="0"><span>1</span><strong>Contacto</strong></button>
     <button class="checkout-step" type="button" data-step-trigger="1"><span>2</span><strong>Datos</strong></button>
-    <button class="checkout-step" type="button" data-step-trigger="2"><span>3</span><strong>Envío</strong></button>
+    <button class="checkout-step" type="button" data-step-trigger="2"><span>3</span><strong>Entrega</strong></button>
     <button class="checkout-step" type="button" data-step-trigger="3"><span>4</span><strong>Pago</strong></button>
   `;
 
@@ -482,16 +482,6 @@ function buildCheckoutStepperMarkup() {
 
   const shippingPanel = createStepPanel(2, "Datos de envío");
   appendIfExists(shippingPanel, fields.address);
-  shippingPanel.appendChild(createSelectField("delivery-method", "deliveryMethod", "Tipo de envío", [
-    "Envío a domicilio",
-    "Entrega coordinada con asesor",
-    "Recoger en punto autorizado",
-  ]));
-  shippingPanel.appendChild(createSelectField("delivery-time", "deliveryTime", "Horario preferido", [
-    "Mañana",
-    "Tarde",
-    "Horario flexible",
-  ]));
   const deliveryNote = document.createElement("div");
   deliveryNote.className = "delivery-note form-field-full";
   deliveryNote.innerHTML = "<strong>Envío:</strong> confirma disponibilidad y tiempos según tu ciudad.";
@@ -502,7 +492,7 @@ function buildCheckoutStepperMarkup() {
   appendIfExists(paymentPanel, paymentSummary);
   const checklist = document.createElement("div");
   checklist.className = "payment-checklist";
-  checklist.innerHTML = "<span>Datos de contacto listos</span><span>Información del negocio completa</span><span>Envío preparado</span>";
+  checklist.innerHTML = "<span>Datos de contacto listos</span><span>Información del negocio completa</span><span>Entrega preparada</span>";
   paymentPanel.appendChild(checklist);
   const paymentActions = createActions({ prev: true });
   appendIfExists(paymentActions, submitButton);
@@ -635,8 +625,18 @@ function setupGsapAnimations() {
     stagger: 0.25,
   });
 
+  gsap.from(".payment-card", {
+    autoAlpha: 0,
+    x: (index) => (index === 0 ? -28 : 28),
+    duration: 0.7,
+    delay: 0.25,
+    ease: "power3.out",
+    stagger: 0.12,
+  });
+
   const revealElements = gsap.utils.toArray("[data-animate]");
   const staggerGroups = gsap.utils.toArray("[data-stagger]");
+  const cardGroups = gsap.utils.toArray(".benefit-grid, .trust-grid, .steps-list, .feature-rail, .audience-grid");
 
   if (!hasScrollTrigger) {
     gsap.from(revealElements, {
@@ -652,6 +652,15 @@ function setupGsapAnimations() {
       duration: 0.65,
       ease: "power3.out",
       stagger: 0.07,
+    });
+    cardGroups.forEach((group) => {
+      gsap.from(group.children, {
+        autoAlpha: 0,
+        y: 26,
+        duration: 0.62,
+        ease: "power3.out",
+        stagger: 0.06,
+      });
     });
     return;
   }
@@ -676,6 +685,20 @@ function setupGsapAnimations() {
       duration: 0.65,
       ease: "power3.out",
       stagger: 0.08,
+      scrollTrigger: {
+        trigger: group,
+        start: "top 84%",
+      },
+    });
+  });
+
+  cardGroups.forEach((group) => {
+    gsap.from(group.children, {
+      autoAlpha: 0,
+      y: 30,
+      duration: 0.68,
+      ease: "power3.out",
+      stagger: 0.07,
       scrollTrigger: {
         trigger: group,
         start: "top 84%",
@@ -800,8 +823,6 @@ elements.checkoutForm.addEventListener("submit", (event) => {
       city: formData.get("city"),
       address: formData.get("address"),
       businessType: formData.get("businessType"),
-      deliveryMethod: formData.get("deliveryMethod"),
-      deliveryTime: formData.get("deliveryTime"),
     },
   };
 
