@@ -83,6 +83,27 @@
         </figure>
       </section>
 
+      <section class="stats-strip" aria-label="Indicadores de confianza para comercios">
+        <div class="stats-strip-inner" data-stagger>
+          <article class="stat-item">
+            <strong>Tarjetas</strong>
+            <span>Debito y credito en el punto de venta</span>
+          </article>
+          <article class="stat-item">
+            <strong>Movilidad</strong>
+            <span>Cobra en local, feria o domicilio</span>
+          </article>
+          <article class="stat-item">
+            <strong>Seguro</strong>
+            <span>Pagos presenciales protegidos</span>
+          </article>
+          <article class="stat-item">
+            <strong>Control</strong>
+            <span>Consulta y gestiona tus ventas</span>
+          </article>
+        </div>
+      </section>
+
       <section class="benefits section-shell" id="beneficios" aria-labelledby="benefits-title">
         <div class="section-heading">
           <span class="eyebrow">Beneficios para vender más</span>
@@ -325,53 +346,148 @@
 
           <form class="checkout-form" data-checkout-form data-animate>
             <div class="form-intro">
-              <span>Datos de entrega y contacto</span>
+              <span>Compra guiada</span>
               <h3 id="checkout-form-title">Pagar con ePayco</h3>
+              <p>Completa cada paso, confirma el envio y deja lista la orden para abrir ePayco Checkout.</p>
             </div>
-          <div class="form-field">
-            <label for="customer-name">Nombre completo</label>
-            <input id="customer-name" name="name" type="text" autocomplete="name" required />
-          </div>
-          <div class="form-field">
-            <label for="customer-email">Correo electrónico</label>
-            <input id="customer-email" name="email" type="email" autocomplete="email" required />
-          </div>
-          <div class="form-field">
-            <label for="customer-phone">Celular</label>
-            <input id="customer-phone" name="phone" type="tel" autocomplete="tel" required />
-          </div>
-          <div class="form-field">
-            <label for="customer-city">Ciudad</label>
-            <input id="customer-city" name="city" type="text" autocomplete="address-level2" required />
-          </div>
-          <div class="form-field form-field-full">
-            <label for="customer-address">Dirección de entrega</label>
-            <input id="customer-address" name="address" type="text" autocomplete="street-address" required />
-          </div>
-          <div class="form-field">
-            <label for="business-type">Tipo de negocio</label>
-            <select id="business-type" name="businessType" required>
-              <option value="">Selecciona una opción</option>
-              <option>Restaurante o cafetería</option>
-              <option>Tienda física</option>
-              <option>Emprendimiento</option>
-              <option>Servicios a domicilio</option>
-              <option>Profesional independiente</option>
-              <option>Otro comercio</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="checkout-quantity">Cantidad de datáfonos solicitados</label>
-            <input id="checkout-quantity" name="quantity" type="number" min="1" value="1" data-checkout-quantity required />
-          </div>
+            <div class="checkout-steps" aria-label="Progreso de compra">
+              <button class="checkout-step is-active" type="button" data-step-trigger="0">
+                <span>1</span>
+                <strong>Contacto</strong>
+              </button>
+              <button class="checkout-step" type="button" data-step-trigger="1">
+                <span>2</span>
+                <strong>Datos</strong>
+              </button>
+              <button class="checkout-step" type="button" data-step-trigger="2">
+                <span>3</span>
+                <strong>Envío</strong>
+              </button>
+              <button class="checkout-step" type="button" data-step-trigger="3">
+                <span>4</span>
+                <strong>Pago</strong>
+              </button>
+            </div>
+            <div class="checkout-assurance" aria-label="Garantias de compra">
+              <span>Pago protegido</span>
+              <span>Envio coordinado</span>
+              <span>Soporte de activacion</span>
+            </div>
 
-          <div class="payment-summary">
-            <span>Total estimado</span>
-            <strong data-payment-total>$0 COP</strong>
-          </div>
+            <section class="checkout-step-panel is-active" data-step-panel="0" aria-label="Datos de contacto">
+              <div class="step-copy form-field-full">
+                <span>Paso 1 de 4</span>
+                <h4>Datos de contacto</h4>
+                <p>Usaremos esta informacion para confirmar tu pedido y acompanarte en la activacion.</p>
+              </div>
+              <div class="form-field form-field-full">
+                <label for="customer-name">Nombre completo</label>
+                <input id="customer-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="customer-email">Correo electrónico</label>
+                <input id="customer-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-field">
+                <label for="customer-phone">Celular</label>
+                <input id="customer-phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-primary btn-full" type="button" data-step-next>Continuar</button>
+              </div>
+            </section>
 
-          <button class="btn btn-primary btn-full" type="submit">Pagar con ePayco</button>
-          <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+            <section class="checkout-step-panel" data-step-panel="1" aria-label="Datos del negocio">
+              <div class="step-copy form-field-full">
+                <span>Paso 2 de 4</span>
+                <h4>Informacion del negocio</h4>
+                <p>Esto ayuda a preparar una compra mas precisa para tu tipo de operacion.</p>
+              </div>
+              <div class="form-field">
+                <label for="business-type">Tipo de negocio</label>
+                <select id="business-type" name="businessType" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Restaurante o cafetería</option>
+                  <option>Tienda física</option>
+                  <option>Emprendimiento</option>
+                  <option>Servicios a domicilio</option>
+                  <option>Profesional independiente</option>
+                  <option>Otro comercio</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="checkout-quantity">Cantidad de datáfonos solicitados</label>
+                <input id="checkout-quantity" name="quantity" type="number" min="1" value="1" data-checkout-quantity required />
+              </div>
+              <div class="form-field form-field-full">
+                <label for="customer-city">Ciudad</label>
+                <input id="customer-city" name="city" type="text" autocomplete="address-level2" required />
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-secondary btn-full" type="button" data-step-prev>Volver</button>
+                <button class="btn btn-primary btn-full" type="button" data-step-next>Continuar</button>
+              </div>
+            </section>
+
+            <section class="checkout-step-panel" data-step-panel="2" aria-label="Datos de envío">
+              <div class="step-copy form-field-full">
+                <span>Paso 3 de 4</span>
+                <h4>Envio y entrega</h4>
+                <p>Indica donde y como quieres recibir tu datafono para coordinar la disponibilidad.</p>
+              </div>
+              <div class="form-field form-field-full">
+                <label for="customer-address">Dirección de entrega</label>
+                <input id="customer-address" name="address" type="text" autocomplete="street-address" required />
+              </div>
+              <div class="form-field">
+                <label for="delivery-method">Tipo de envío</label>
+                <select id="delivery-method" name="deliveryMethod" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Envío a domicilio</option>
+                  <option>Entrega coordinada con asesor</option>
+                  <option>Recoger en punto autorizado</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="delivery-time">Horario preferido</label>
+                <select id="delivery-time" name="deliveryTime" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Mañana</option>
+                  <option>Tarde</option>
+                  <option>Horario flexible</option>
+                </select>
+              </div>
+              <div class="delivery-note form-field-full">
+                <strong>Envío:</strong> confirma disponibilidad y tiempos según tu ciudad.
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-secondary btn-full" type="button" data-step-prev>Volver</button>
+                <button class="btn btn-primary btn-full" type="button" data-step-next>Continuar</button>
+              </div>
+            </section>
+
+            <section class="checkout-step-panel" data-step-panel="3" aria-label="Resumen y pago">
+              <div class="step-copy form-field-full">
+                <span>Paso 4 de 4</span>
+                <h4>Resumen antes de pagar</h4>
+                <p>Revisa el total estimado. El boton queda listo para conectar el checkout real de ePayco.</p>
+              </div>
+              <div class="payment-summary">
+                <span>Total estimado</span>
+                <strong data-payment-total>$0 COP</strong>
+              </div>
+              <div class="payment-checklist">
+                <span>Datos de contacto listos</span>
+                <span>Información del negocio completa</span>
+                <span>Envío preparado</span>
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-secondary btn-full" type="button" data-step-prev>Volver</button>
+                <button class="btn btn-primary btn-full" type="submit">Pagar con ePayco</button>
+              </div>
+            </section>
+
+            <p class="form-message" data-form-message role="status" aria-live="polite"></p>
 
           <!--
             Integración futura con ePayco Checkout:
@@ -437,8 +553,8 @@
 
       <section class="faq section-shell" id="faq" aria-labelledby="faq-title">
         <div class="section-heading">
-          <span class="eyebrow">Preguntas frecuentes</span>
-          <h2 id="faq-title">Resuelve tus dudas antes de comprar</h2>
+          <h2 id="faq-title">Preguntas frecuentes sobre datáfonos ePayco</h2>
+          <p>Resolvemos las dudas más comunes sobre cómo comprar, recibir y empezar a usar tu datáfono.</p>
         </div>
         <div class="faq-list">
           <details>
@@ -469,6 +585,13 @@
             <summary>¿Dónde puedo consultar mis ventas?</summary>
             <p>La consulta de ventas se podrá realizar desde los canales de gestión y reportes definidos por ePayco.</p>
           </details>
+        </div>
+        <div class="faq-support">
+          <div>
+            <span>¿Aun tienes dudas?</span>
+            <strong>Te acompanamos antes de comprar tu datafono.</strong>
+          </div>
+          <a class="btn btn-secondary" href="#checkout">Configurar mi pedido</a>
         </div>
       </section>
 
