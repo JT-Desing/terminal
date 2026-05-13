@@ -8,592 +8,391 @@
       name="description"
       content="Compra tu datáfono ePayco y empieza a recibir pagos con tarjeta débito y crédito en tu negocio de forma rápida, segura y sencilla."
     />
+    <link rel="preload" href="assets/fonts/Davivienda-Condensed-Bold.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="assets/fonts/Davivienda-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script defer src="script.js"></script>
   </head>
   <body>
-    <header class="site-header" id="inicio">
-      <nav class="navbar" aria-label="Navegación principal">
-        <a class="brand brand-logo-link" href="#inicio" aria-label="Inicio ePayco datáfonos">
-          <img class="brand-logo" src="assets/epayco-logo.svg" alt="ePayco" />
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <img src="assets/epayco-logo.svg" alt="ePayco" />
+          <span></span>
+          <img src="assets/terminal-logo.svg" alt="Terminal" />
         </a>
+
         <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
           <span></span>
           <span></span>
-          <span></span>
         </button>
+
         <div class="nav-links" id="main-menu">
-          <a href="#beneficios">Beneficios</a>
-          <a href="#producto">Producto</a>
-          <a href="#checkout">Comprar</a>
-          <a href="#faq">FAQ</a>
+          <a href="#beneficios">Descubre más</a>
+          <a href="#medidas">Tarifas</a>
+          <a href="#faq">Documentación</a>
+          <a class="nav-buy" href="#checkout">Comprar</a>
         </div>
-        <a class="nav-cta" href="#checkout">Comprar ahora</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <span class="eyebrow">Pagos presenciales rápidos y seguros</span>
-          <h1 id="hero-title">Vende desde cualquier lugar con tu datáfono ePayco</h1>
-          <p>
-            Recibe pagos con tarjetas débito y crédito de forma rápida, segura y fácil, ideal para negocios que quieren
-            vender más sin complicaciones.
+      <section class="section hero-section" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow" data-reveal>TERMINAL EPAYCO</p>
+          <h1 id="hero-title" data-reveal>Pagos rápidos y sin complicaciones para tu negocio</h1>
+          <p class="hero-lead" data-reveal>
+            Recibe pagos presenciales con tarjeta débito y crédito desde un datáfono compacto,
+            fácil de activar y conectado al ecosistema de pagos ePayco.
           </p>
-          <div class="hero-actions" aria-label="Acciones principales">
-            <a class="btn btn-primary" href="#checkout">Comprar ahora</a>
-            <a class="btn btn-secondary" href="#beneficios">Conocer beneficios</a>
-          </div>
-          <div class="hero-proof" aria-label="Beneficios destacados">
-            <span>Activación guiada</span>
-            <span>Soporte ePayco</span>
-            <span>Control de ventas</span>
+          <div class="hero-actions" data-reveal>
+            <a class="btn btn-dark" href="#checkout">Obtén tu plan + 1 mes gratis</a>
+            <a class="btn btn-light" href="#beneficios">Conocer beneficios</a>
           </div>
         </div>
 
-        <figure class="hero-visual" aria-label="Mockup de datáfono ePayco">
-          <div class="payment-card card-red">
-            <span>Pago aprobado</span>
-            <strong>$129.900</strong>
-          </div>
-          <div class="dataphone" aria-hidden="true">
-            <div class="dataphone-top">
-              <span class="status-dot"></span>
-              <span class="brand-mini">ePayco</span>
-            </div>
-            <div class="screen">
-              <span>Total a pagar</span>
-              <strong>$85.000</strong>
-              <small>Tarjeta detectada</small>
-            </div>
-            <div class="keypad">
-              <span></span><span></span><span></span>
-              <span></span><span></span><span></span>
-              <span></span><span></span><span></span>
-            </div>
-            <div class="confirm-key"></div>
-          </div>
-          <div class="payment-card card-white">
-            <span>Venta segura</span>
-            <strong>24/7</strong>
-          </div>
-        </figure>
-      </section>
-
-      <section class="stats-strip" aria-label="Indicadores de confianza para comercios">
-        <div class="stats-strip-inner" data-stagger>
-          <article class="stat-item">
-            <strong>Tarjetas</strong>
-            <span>Debito y credito en el punto de venta</span>
-          </article>
-          <article class="stat-item">
-            <strong>Movilidad</strong>
-            <span>Cobra en local, feria o domicilio</span>
-          </article>
-          <article class="stat-item">
-            <strong>Seguro</strong>
-            <span>Pagos presenciales protegidos</span>
-          </article>
-          <article class="stat-item">
-            <strong>Control</strong>
-            <span>Consulta y gestiona tus ventas</span>
-          </article>
+        <div class="hero-product" aria-hidden="true">
+          <div class="yellow-orbit"></div>
+          <img src="assets/figma/hero-datafono.png" alt="" />
         </div>
       </section>
 
-      <section class="benefits section-shell" id="beneficios" aria-labelledby="benefits-title">
+      <section class="section about-section" id="beneficios" aria-labelledby="about-title">
         <div class="section-heading">
-          <span class="eyebrow">Beneficios para vender más</span>
-          <h2 id="benefits-title">Todo lo que tu negocio necesita para recibir pagos presenciales</h2>
-          <p>Una solución práctica para comercios que quieren cobrar con tarjeta, controlar sus ventas y dar más confianza.</p>
+          <p class="eyebrow" data-reveal>QUÉ ES Y CÓMO FUNCIONA</p>
+          <h2 id="about-title" data-reveal>Una terminal diseñada para vender dentro y fuera del local</h2>
+          <p data-reveal>
+            Con Terminal ePayco puedes cobrar en tienda, domicilio, feria o evento con una experiencia
+            simple para tu equipo y confiable para tus clientes.
+          </p>
         </div>
 
         <div class="benefit-grid">
-          <article class="feature-card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h13A2.5 2.5 0 0 1 21 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5v-9Zm2 2h14V8H5v1.5Zm0 3v4A.5.5 0 0 0 5.5 17h13a.5.5 0 0 0 .5-.5v-4H5Z"/></svg>
-            </span>
-            <h3>Recibe tarjetas</h3>
-            <p>Acepta pagos con tarjetas débito y crédito en tu punto de venta.</p>
+          <article class="benefit-card" data-reveal>
+            <img src="assets/figma/icon-hand-coins.svg" alt="" />
+            <h3>Pagos presenciales</h3>
+            <p>Recibe tarjetas débito y crédito sin procesos complejos.</p>
           </article>
-          <article class="feature-card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2 4.5 5.5v5.9c0 4.8 3.2 8.9 7.5 10.6 4.3-1.7 7.5-5.8 7.5-10.6V5.5L12 2Zm0 2.2 5.5 2.6v4.6c0 3.6-2.2 6.9-5.5 8.3-3.3-1.4-5.5-4.7-5.5-8.3V6.8L12 4.2Zm3.5 5.4-4.2 4.2-1.8-1.8-1.4 1.4 3.2 3.2 5.6-5.6-1.4-1.4Z"/></svg>
-            </span>
-            <h3>Pagos seguros</h3>
-            <p>Transacciones protegidas para tu comercio y tus clientes.</p>
+          <article class="benefit-card" data-reveal>
+            <img src="assets/figma/icon-coins.svg" alt="" />
+            <h3>Ventas bajo control</h3>
+            <p>Consulta tus movimientos y mantén visibilidad del dinero recibido.</p>
           </article>
-          <article class="feature-card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 3v14h10V5H7Zm3 11h4v2h-4v-2Z"/></svg>
-            </span>
-            <h3>Fácil de usar</h3>
-            <p>Diseñado para cobrar rápido, sin procesos complejos ni fricción.</p>
+          <article class="benefit-card" data-reveal>
+            <img src="assets/figma/icon-register.svg" alt="" />
+            <h3>Listo para tu operación</h3>
+            <p>Funciona para puntos de venta, comercios móviles y servicios a domicilio.</p>
           </article>
-          <article class="feature-card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16v4H4V4Zm0 6h7v10H4V10Zm9 0h7v4h-7v-4Zm0 6h7v4h-7v-4Z"/></svg>
-            </span>
-            <h3>Control de ventas</h3>
-            <p>Consulta reportes y mantén visibilidad sobre tus pagos.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3a8 8 0 0 0-8 8v3a3 3 0 0 0 3 3h1v-6H6a6 6 0 0 1 12 0h-2v6h1.1A5.1 5.1 0 0 1 12 21h-2v-2h2a3.1 3.1 0 0 0 3.04-2.5H16a3 3 0 0 0 3-3V11a8 8 0 0 0-8-8Z"/></svg>
-            </span>
+          <article class="benefit-card" data-reveal>
+            <img src="assets/figma/icon-file.svg" alt="" />
             <h3>Soporte ePayco</h3>
-            <p>Acompañamiento para activar y operar tu solución de pagos.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 5v4.2l3.3 2-1 1.7L11 12.3V7h2Z"/></svg>
-            </span>
-            <h3>Cobro ágil</h3>
-            <p>Ideal para filas, entregas, ferias, eventos y ventas en movimiento.</p>
+            <p>Acompañamiento para activar tu equipo y empezar a cobrar con seguridad.</p>
           </article>
         </div>
       </section>
 
-      <section class="audience section-shell" aria-labelledby="audience-title">
-        <div class="audience-stage">
-          <div class="audience-copy" data-animate>
-            <span class="eyebrow">¿Para quién es ideal?</span>
-            <h2 id="audience-title">Un datáfono para negocios que necesitan vender sin perder ritmo</h2>
-            <p>
-              Pensado para comercios que cobran en mostrador, mesa, domicilio, feria o evento. Más opciones de pago,
-              menos ventas perdidas y una experiencia más confiable para tus clientes.
-            </p>
-            <div class="audience-proof">
-              <strong>7 tipos de negocio</strong>
-              <span>una misma solución de cobro presencial</span>
-            </div>
+      <section class="section audience-section" id="audiencia" aria-labelledby="audience-title">
+        <div class="section-heading center">
+          <p class="eyebrow" data-reveal>PARA NEGOCIOS REALES</p>
+          <h2 id="audience-title" data-reveal>Terminal ePayco se adapta a la forma en que vendes</h2>
+        </div>
+
+        <div class="audience-layout">
+          <div class="audience-image" data-reveal>
+            <div class="yellow-disc"></div>
+            <img src="assets/figma/audience-man.png" alt="Persona usando Terminal ePayco" />
           </div>
-          <div class="audience-grid upgraded-grid" data-stagger>
-            <article class="audience-card">
-              <span class="audience-icon" aria-hidden="true">01</span>
-              <div>
-                <h3>Restaurantes y cafeterías</h3>
-                <p>Cobra en caja, mesa o entregas sin fricción.</p>
-              </div>
+          <div class="audience-list" data-reveal>
+            <article>
+              <span>01</span>
+              <h3>Restaurantes y cafeterías</h3>
+              <p>Cobra en mesa, barra o domicilio sin fricción.</p>
             </article>
-            <article class="audience-card">
-              <span class="audience-icon" aria-hidden="true">02</span>
-              <div>
-                <h3>Tiendas físicas</h3>
-                <p>Ofrece pagos con tarjeta desde el punto de venta.</p>
-              </div>
+            <article>
+              <span>02</span>
+              <h3>Tiendas físicas y puntos de venta</h3>
+              <p>Acepta pagos con tarjeta y mejora la confianza del comprador.</p>
             </article>
-            <article class="audience-card">
-              <span class="audience-icon" aria-hidden="true">03</span>
-              <div>
-                <h3>Ferias y eventos</h3>
-                <p>Vende donde esté tu cliente, sin depender del efectivo.</p>
-              </div>
+            <article>
+              <span>03</span>
+              <h3>Ferias, eventos y emprendedores</h3>
+              <p>Lleva tu terminal a donde esté tu cliente.</p>
             </article>
-            <article class="audience-card">
-              <span class="audience-icon" aria-hidden="true">04</span>
-              <div>
-                <h3>Emprendedores</h3>
-                <p>Proyecta más confianza desde tu primera venta.</p>
-              </div>
-            </article>
-            <article class="audience-card">
-              <span class="audience-icon" aria-hidden="true">05</span>
-              <div>
-                <h3>Servicios a domicilio</h3>
-                <p>Lleva el cobro hasta la puerta del cliente.</p>
-              </div>
-            </article>
-            <article class="audience-card">
-              <span class="audience-icon" aria-hidden="true">06</span>
-              <div>
-                <h3>Profesionales independientes</h3>
-                <p>Cobra servicios presenciales de forma sencilla.</p>
-              </div>
-            </article>
-            <article class="audience-card audience-card-wide">
-              <span class="audience-icon" aria-hidden="true">07</span>
-              <div>
-                <h3>Comercios con movilidad</h3>
-                <p>Ideal para negocios que necesitan cobrar en diferentes puntos durante el día.</p>
-              </div>
+            <article>
+              <span>04</span>
+              <h3>Profesionales independientes</h3>
+              <p>Recibe pagos presenciales por servicios, visitas y entregas.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="product-section section-shell" id="producto" aria-labelledby="product-title">
-        <div class="showcase-grid">
-          <div class="showcase-media" data-animate aria-label="Presentación visual del datáfono ePayco">
-            <div class="showcase-device" aria-hidden="true">
-              <div class="device-speaker"></div>
-              <div class="device-screen">
-                <span>Venta presencial</span>
-                <strong>$85.000</strong>
-                <small>Aprobada</small>
-              </div>
-              <div class="device-keys">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-              </div>
-              <div class="device-action"></div>
-            </div>
-            <div class="floating-ticket ticket-approved">
-              <span>Transacción protegida</span>
-              <strong>Pago aprobado</strong>
-            </div>
-            <div class="floating-ticket ticket-report">
-              <span>Ventas del día</span>
-              <strong>+18%</strong>
-            </div>
-          </div>
+      <section class="section security-section" id="seguridad" aria-labelledby="security-title">
+        <div class="security-copy">
+          <p class="eyebrow" data-reveal>TODO LO QUE NECESITAS</p>
+          <h2 id="security-title" data-reveal>Control, seguridad y respaldo en cada venta</h2>
+          <p data-reveal>
+            Una experiencia de pago pensada para que tu negocio cobre más fácil,
+            con tecnología segura y herramientas para hacer seguimiento.
+          </p>
+          <img src="assets/figma/security-phone.png" alt="Pantalla de pagos ePayco" data-reveal />
+        </div>
 
-          <div class="showcase-copy" data-animate>
-            <div class="product-logo-strip">
-              <img src="assets/terminal-logo.svg" alt="Terminal ePayco" />
-            </div>
-            <span class="eyebrow">Producto destacado</span>
-            <h2 id="product-title">Un datáfono compacto para cobrar mejor en cada punto de venta</h2>
+        <div class="security-grid">
+          <article data-reveal>
+            <img src="assets/figma/icon-money.svg" alt="" />
+            <h3>Transacciones protegidas</h3>
+            <p>Procesos seguros para pagos presenciales.</p>
+          </article>
+          <article data-reveal>
+            <img src="assets/figma/icon-coins.svg" alt="" />
+            <h3>Reportes y control</h3>
+            <p>Más visibilidad sobre tus ventas diarias.</p>
+          </article>
+          <article data-reveal>
+            <img src="assets/figma/icon-register.svg" alt="" />
+            <h3>Fácil configuración</h3>
+            <p>Activa tu equipo y empieza a vender rápido.</p>
+          </article>
+          <article data-reveal>
+            <img src="assets/figma/icon-file.svg" alt="" />
+            <h3>Acompañamiento</h3>
+            <p>Soporte para comercios durante el proceso.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section measures-section" id="medidas" aria-labelledby="measures-title">
+        <div class="measures-card" data-reveal>
+          <div>
+            <p class="eyebrow">DISEÑO COMPACTO</p>
+            <h2 id="measures-title">Medidas del datáfono</h2>
             <p>
-              Presenta a tus clientes una forma de pago moderna, práctica y segura. Ideal para negocios que quieren
-              vender con tarjeta sin complicar su operación diaria.
+              Un equipo liviano, fácil de transportar y cómodo para cobrar en mostrador,
+              domicilio o movilidad.
             </p>
-            <div class="showcase-price">
-              <span>Precio editable desde</span>
-              <strong data-product-price="129900">$129.900 COP</strong>
-            </div>
-            <div class="feature-rail">
-              <article>
-                <span>01</span>
-                <h3>Pago rápido</h3>
-                <p>Flujo claro para cobrar en segundos.</p>
-              </article>
-              <article>
-                <span>02</span>
-                <h3>Movilidad real</h3>
-                <p>Funciona para local, domicilios, ferias y eventos.</p>
-              </article>
-              <article>
-                <span>03</span>
-                <h3>Control comercial</h3>
-                <p>Compatible con el ecosistema de pagos ePayco.</p>
-              </article>
-            </div>
-            <a class="btn btn-primary" href="#checkout">Configurar compra</a>
+            <dl class="measure-list">
+              <div><dt>Alto</dt><dd>14.3 cm</dd></div>
+              <div><dt>Ancho</dt><dd>7.1 cm</dd></div>
+              <div><dt>Uso</dt><dd>Presencial</dd></div>
+            </dl>
+          </div>
+          <div class="measure-images" aria-hidden="true">
+            <img class="measure-front" src="assets/figma/measure-front.png" alt="" />
+            <img class="measure-side" src="assets/figma/measure-side.png" alt="" />
           </div>
         </div>
       </section>
 
-      <section class="checkout-section purchase-section section-shell" id="checkout" aria-labelledby="checkout-title">
-        <div class="section-heading purchase-heading" data-animate>
-          <span class="eyebrow">Compra en línea</span>
-          <h2 id="checkout-title">Configura tu pedido y completa tus datos en un solo lugar</h2>
+      <section class="section steps-section" id="pasos" aria-labelledby="steps-title">
+        <div class="section-heading center">
+          <p class="eyebrow" data-reveal>COMPRA EN LÍNEA</p>
+          <h2 id="steps-title" data-reveal>Elige tu terminal y empieza a recibir pagos</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article data-reveal>
+            <img src="assets/figma/step-one.png" alt="Terminal ePayco" />
+            <span>1</span>
+            <h3>Elige tu datáfono</h3>
+            <p>Selecciona la cantidad que necesita tu negocio.</p>
+          </article>
+          <article data-reveal>
+            <img src="assets/figma/step-two.png" alt="Pago con tarjeta" />
+            <span>2</span>
+            <h3>Realiza el pago</h3>
+            <p>Deja tus datos y prepara la integración con ePayco Checkout.</p>
+          </article>
+          <article data-reveal>
+            <img src="assets/figma/step-three.png" alt="Entrega del equipo" />
+            <span>3</span>
+            <h3>Recibe tu equipo</h3>
+            <p>Activa la terminal y empieza a vender de forma presencial.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section checkout-section" id="checkout" aria-labelledby="checkout-title">
+        <div class="checkout-intro" data-reveal>
+          <p class="eyebrow">FINALIZA TU PEDIDO</p>
+          <h2 id="checkout-title">Compra tu Terminal ePayco en pocos pasos</h2>
           <p>
-            Ajusta la cantidad de datáfonos, revisa el total y deja preparada la información para conectar ePayco
-            Checkout.
+            Ajusta la cantidad, completa tus datos y deja preparada la información para conectar
+            el botón con la pasarela de pagos ePayco.
           </p>
         </div>
 
-        <div class="purchase-layout">
-          <aside class="cart-card order-panel" aria-labelledby="cart-title" data-animate>
-            <div class="order-product">
-              <span class="product-tag">Datáfono ePayco</span>
-              <h3>Datáfono compacto para pagos presenciales</h3>
-              <p class="product-price">$129.900 COP</p>
-              <ul class="check-list">
-                <li>Conexión rápida.</li>
-                <li>Diseño compacto.</li>
-                <li>Fácil configuración.</li>
-                <li>Recibe pagos presenciales.</li>
-              </ul>
-              <div class="delivery-note">
-                <strong>Entrega:</strong> confirma disponibilidad y tiempos según tu ciudad.
-              </div>
-              <div class="product-controls">
-                <label for="product-quantity">Cantidad</label>
-                <div class="quantity-control">
-                  <button type="button" data-product-minus aria-label="Disminuir cantidad">-</button>
-                  <input id="product-quantity" type="number" min="1" value="1" data-product-quantity />
-                  <button type="button" data-product-plus aria-label="Aumentar cantidad">+</button>
-                </div>
-              </div>
-              <button class="btn btn-primary btn-full" type="button" data-add-to-cart>Agregar al carrito</button>
-            </div>
+        <div class="commerce-layout">
+          <aside class="product-panel" data-reveal>
+            <img src="assets/figma/checkout-terminal.png" alt="Datáfono Terminal ePayco" />
+            <p class="product-kicker">DATÁFONO EPAYCO</p>
+            <h3>Terminal compacta para pagos presenciales</h3>
+            <p class="product-price" data-unit-price="46410">$46.410 COP</p>
+            <ul>
+              <li>Conexión rápida.</li>
+              <li>Diseño compacto.</li>
+              <li>Fácil configuración.</li>
+              <li>Compatible con el ecosistema ePayco.</li>
+            </ul>
 
-            <div class="cart-header">
-              <h3 id="cart-title">Resumen de compra</h3>
-              <span data-cart-count>0 productos</span>
+            <div class="quantity-control" aria-label="Cantidad de datáfonos">
+              <button type="button" data-qty-action="decrease" aria-label="Disminuir cantidad">-</button>
+              <input id="product-quantity" type="number" min="1" value="1" inputmode="numeric" />
+              <button type="button" data-qty-action="increase" aria-label="Aumentar cantidad">+</button>
             </div>
-            <div class="cart-items" data-cart-items>
-              <p class="empty-cart">Tu carrito está vacío. Agrega un datáfono para continuar.</p>
-            </div>
-            <div class="cart-totals">
-              <div>
-                <span>Subtotal</span>
-                <strong data-cart-subtotal>$0 COP</strong>
+            <button class="btn btn-dark full" type="button" id="add-to-cart">Agregar al carrito</button>
+
+            <div class="cart-box" aria-live="polite">
+              <div class="cart-header">
+                <span>Resumen</span>
+                <span id="cart-count">0 productos</span>
               </div>
-              <div>
-                <span>Total</span>
-                <strong data-cart-total>$0 COP</strong>
+              <div id="cart-items" class="cart-items">
+                <p class="cart-empty">Tu carrito está vacío.</p>
               </div>
+              <div class="cart-total-row"><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div>
+              <div class="cart-total-row"><span>Total</span><strong id="cart-total">$0</strong></div>
             </div>
-            <a class="btn btn-secondary btn-full" href="#checkout-form-title" data-checkout-link>Continuar con mis datos</a>
           </aside>
 
-          <form class="checkout-form" data-checkout-form data-animate>
-            <div class="form-intro">
-              <span>Compra guiada</span>
-              <h3 id="checkout-form-title">Pagar con ePayco</h3>
-              <p>Completa tus datos, revisa el total y deja lista la orden para abrir ePayco Checkout.</p>
-            </div>
-            <div class="checkout-steps" aria-label="Progreso de compra">
-              <button class="checkout-step is-active" type="button" data-step-trigger="0">
-                <span>1</span>
-                <strong>Contacto</strong>
-              </button>
-              <button class="checkout-step" type="button" data-step-trigger="1">
-                <span>2</span>
-                <strong>Datos</strong>
-              </button>
-              <button class="checkout-step" type="button" data-step-trigger="2">
-                <span>3</span>
-                <strong>Entrega</strong>
-              </button>
-              <button class="checkout-step" type="button" data-step-trigger="3">
-                <span>4</span>
-                <strong>Pago</strong>
-              </button>
-            </div>
-            <div class="checkout-assurance" aria-label="Garantias de compra">
-              <span>Pago protegido</span>
-              <span>Entrega coordinada</span>
-              <span>Soporte de activacion</span>
+          <form class="checkout-card" id="checkout-form" novalidate data-reveal>
+            <div class="stepper" role="tablist" aria-label="Pasos del checkout">
+              <button type="button" class="step is-active" data-step-target="1"><span>1</span>Contacto</button>
+              <button type="button" class="step" data-step-target="2"><span>2</span>Datos</button>
+              <button type="button" class="step" data-step-target="3"><span>3</span>Entrega</button>
+              <button type="button" class="step" data-step-target="4"><span>4</span>Pago</button>
             </div>
 
-            <section class="checkout-step-panel is-active" data-step-panel="0" aria-label="Datos de contacto">
-              <div class="step-copy form-field-full">
-                <span>Paso 1 de 4</span>
-                <h4>Datos de contacto</h4>
-                <p>Usaremos esta informacion para confirmar tu pedido y acompanarte en la activacion.</p>
-              </div>
-              <div class="form-field form-field-full">
-                <label for="customer-name">Nombre completo</label>
-                <input id="customer-name" name="name" type="text" autocomplete="name" required />
-              </div>
-              <div class="form-field">
-                <label for="customer-email">Correo electrónico</label>
-                <input id="customer-email" name="email" type="email" autocomplete="email" required />
-              </div>
-              <div class="form-field">
-                <label for="customer-phone">Celular</label>
-                <input id="customer-phone" name="phone" type="tel" autocomplete="tel" required />
-              </div>
-              <div class="step-actions">
-                <button class="btn btn-primary btn-full" type="button" data-step-next>Continuar</button>
-              </div>
-            </section>
+            <fieldset class="step-panel is-active" data-step-panel="1">
+              <legend>Datos de contacto</legend>
+              <label>
+                Nombre completo
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Correo electrónico
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Celular
+                <input name="phone" type="tel" autocomplete="tel" required />
+              </label>
+            </fieldset>
 
-            <section class="checkout-step-panel" data-step-panel="1" aria-label="Datos del negocio">
-              <div class="step-copy form-field-full">
-                <span>Paso 2 de 4</span>
-                <h4>Informacion del negocio</h4>
-                <p>Esto ayuda a preparar una compra mas precisa para tu tipo de operacion.</p>
-              </div>
-              <div class="form-field">
-                <label for="business-type">Tipo de negocio</label>
-                <select id="business-type" name="businessType" required>
+            <fieldset class="step-panel" data-step-panel="2">
+              <legend>Información del negocio</legend>
+              <label>
+                Tipo de negocio
+                <select name="businessType" required>
                   <option value="">Selecciona una opción</option>
                   <option>Restaurante o cafetería</option>
                   <option>Tienda física</option>
+                  <option>Feria o evento</option>
                   <option>Emprendimiento</option>
                   <option>Servicios a domicilio</option>
                   <option>Profesional independiente</option>
-                  <option>Otro comercio</option>
                 </select>
-              </div>
-              <div class="form-field">
-                <label for="checkout-quantity">Cantidad de datáfonos solicitados</label>
-                <input id="checkout-quantity" name="quantity" type="number" min="1" value="1" data-checkout-quantity required />
-              </div>
-              <div class="form-field form-field-full">
-                <label for="customer-city">Ciudad</label>
-                <input id="customer-city" name="city" type="text" autocomplete="address-level2" required />
-              </div>
-              <div class="step-actions">
-                <button class="btn btn-secondary btn-full" type="button" data-step-prev>Volver</button>
-                <button class="btn btn-primary btn-full" type="button" data-step-next>Continuar</button>
-              </div>
-            </section>
+              </label>
+              <label>
+                Ciudad
+                <input name="city" type="text" autocomplete="address-level2" required />
+              </label>
+            </fieldset>
 
-            <section class="checkout-step-panel" data-step-panel="2" aria-label="Datos de envío">
-              <div class="step-copy form-field-full">
-                <span>Paso 3 de 4</span>
-                <h4>Entrega del equipo</h4>
-                <p>Indica la direccion donde deseas recibir tu datafono y confirmaremos disponibilidad segun tu ciudad.</p>
-              </div>
-              <div class="form-field form-field-full">
-                <label for="customer-address">Dirección de entrega</label>
-                <input id="customer-address" name="address" type="text" autocomplete="street-address" required />
-              </div>
-              <div class="delivery-note form-field-full">
-                <strong>Envío:</strong> confirma disponibilidad y tiempos según tu ciudad.
-              </div>
-              <div class="step-actions">
-                <button class="btn btn-secondary btn-full" type="button" data-step-prev>Volver</button>
-                <button class="btn btn-primary btn-full" type="button" data-step-next>Continuar</button>
-              </div>
-            </section>
+            <fieldset class="step-panel" data-step-panel="3">
+              <legend>Entrega</legend>
+              <label>
+                Dirección de entrega
+                <input name="address" type="text" autocomplete="street-address" required />
+              </label>
+              <label>
+                Cantidad de datáfonos solicitados
+                <input name="checkoutQuantity" id="checkout-quantity" type="number" min="1" value="1" required />
+              </label>
+            </fieldset>
 
-            <section class="checkout-step-panel" data-step-panel="3" aria-label="Resumen y pago">
-              <div class="step-copy form-field-full">
-                <span>Paso 4 de 4</span>
-                <h4>Resumen antes de pagar</h4>
-                <p>Revisa el total estimado. El boton queda listo para conectar el checkout real de ePayco.</p>
-              </div>
+            <fieldset class="step-panel" data-step-panel="4">
+              <legend>Resumen de pago</legend>
               <div class="payment-summary">
                 <span>Total estimado</span>
-                <strong data-payment-total>$0 COP</strong>
+                <strong id="payment-total">$0</strong>
               </div>
-              <div class="payment-checklist">
-                <span>Datos de contacto listos</span>
-                <span>Información del negocio completa</span>
-                <span>Entrega preparada</span>
-              </div>
-              <div class="step-actions">
-                <button class="btn btn-secondary btn-full" type="button" data-step-prev>Volver</button>
-                <button class="btn btn-primary btn-full" type="submit">Pagar con ePayco</button>
-              </div>
-            </section>
+              <p class="payment-note">
+                Antes de pagar, agrega al menos un datáfono al carrito y revisa tus datos.
+              </p>
+            </fieldset>
 
-            <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+            <div class="form-actions">
+              <button class="btn btn-light" type="button" id="prev-step">Volver</button>
+              <button class="btn btn-dark" type="button" id="next-step">Continuar</button>
+              <button class="btn btn-dark pay-button" type="submit" id="pay-button">Pagar con ePayco</button>
+            </div>
 
-          <!--
-            Integración futura con ePayco Checkout:
-            1. Inserta aquí el script oficial de ePayco Checkout.
-            2. Configura tu llave pública en el handler de ePayco.
-            3. Genera una referencia única de pago por orden.
-            4. Envía el monto calculado, moneda, descripción del producto y datos del comprador.
-            5. Define las URL de respuesta y confirmación para validar el pago en tu backend.
-            6. Reemplaza la simulación del submit en script.js por la apertura real del checkout ePayco.
-          -->
+            <p class="form-message" id="form-message" role="status"></p>
+
+            <!-- Integración ePayco:
+              1. Insertar aquí el script oficial de ePayco Checkout.
+              2. Reemplazar la llave pública por la llave real del comercio.
+              3. Generar una referencia única de pago por pedido.
+              4. Enviar monto, moneda, datos del comprador, cantidad y descripción.
+              5. Configurar URL de respuesta y confirmación del comercio.
+            -->
           </form>
         </div>
       </section>
 
-      <section class="trust section-shell" aria-labelledby="trust-title">
-        <div class="section-heading">
-          <span class="eyebrow">Confianza ePayco</span>
-          <h2 id="trust-title">Una experiencia de pago segura para tu negocio</h2>
-        </div>
-        <div class="trust-grid">
-          <article>
-            <h3>Tecnología de pagos segura</h3>
-            <p>Solución preparada para procesar pagos presenciales de forma confiable.</p>
-          </article>
-          <article>
-            <h3>Respaldo ePayco</h3>
-            <p>Acompañamiento para comercios que quieren activar nuevos canales de cobro.</p>
-          </article>
-          <article>
-            <h3>Transacciones protegidas</h3>
-            <p>Más tranquilidad para vender y más confianza para tus clientes.</p>
-          </article>
-          <article>
-            <h3>Gestión sencilla</h3>
-            <p>Administra tus pagos y consulta el movimiento de tus ventas.</p>
-          </article>
-        </div>
-      </section>
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="faq-copy" data-reveal>
+          <p class="eyebrow">PREGUNTAS FRECUENTES</p>
+          <h2 id="faq-title">Resolvemos tus dudas sobre Terminal ePayco</h2>
+          <p>Información clara para comprar, activar y empezar a cobrar con tu datáfono.</p>
 
-      <section class="steps section-shell" aria-labelledby="steps-title">
-        <div class="section-heading">
-          <span class="eyebrow">Cómo funciona</span>
-          <h2 id="steps-title">Empieza a vender con tarjeta en 3 pasos</h2>
-        </div>
-        <ol class="steps-list">
-          <li>
-            <span>1</span>
-            <h3>Elige tu datáfono</h3>
-            <p>Agrega la cantidad que necesitas para tu operación.</p>
-          </li>
-          <li>
-            <span>2</span>
-            <h3>Realiza el pago</h3>
-            <p>Completa tus datos y continúa con ePayco Checkout.</p>
-          </li>
-          <li>
-            <span>3</span>
-            <h3>Recibe y empieza a vender</h3>
-            <p>Activa tu equipo y comienza a recibir pagos presenciales.</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="faq section-shell" id="faq" aria-labelledby="faq-title">
-        <div class="section-heading">
-          <h2 id="faq-title">Preguntas frecuentes sobre datáfonos ePayco</h2>
-          <p>Resolvemos las dudas más comunes sobre cómo comprar, recibir y empezar a usar tu datáfono.</p>
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary>¿Qué medios de pago puedo recibir?</summary>
-            <p>Podrás recibir pagos con tarjetas débito y crédito, según las condiciones de activación del servicio.</p>
-          </details>
-          <details>
-            <summary>¿Cuánto tarda la entrega?</summary>
-            <p>El tiempo de entrega puede variar según la ciudad y disponibilidad. Déjalo parametrizado cuando confirmes la logística.</p>
-          </details>
-          <details>
-            <summary>¿Necesito tener cuenta en ePayco?</summary>
-            <p>Sí, para gestionar tus pagos y ventas necesitas activar o vincular tu comercio al ecosistema ePayco.</p>
-          </details>
-          <details>
-            <summary>¿Tiene soporte?</summary>
-            <p>Sí. ePayco puede acompañarte durante la activación y operación del datáfono.</p>
-          </details>
-          <details>
-            <summary>¿Puedo comprar más de un datáfono?</summary>
-            <p>Sí. Puedes ajustar la cantidad desde el producto, el carrito o el formulario de checkout.</p>
-          </details>
-          <details>
-            <summary>¿Cómo activo mi datáfono?</summary>
-            <p>Después de la compra, recibirás las indicaciones para configurar el equipo y empezar a cobrar.</p>
-          </details>
-          <details>
-            <summary>¿Dónde puedo consultar mis ventas?</summary>
-            <p>La consulta de ventas se podrá realizar desde los canales de gestión y reportes definidos por ePayco.</p>
-          </details>
-        </div>
-        <div class="faq-support">
-          <div>
-            <span>¿Aun tienes dudas?</span>
-            <strong>Te acompanamos antes de comprar tu datafono.</strong>
+          <div class="faq-list">
+            <details>
+              <summary>¿Qué medios de pago puedo recibir?</summary>
+              <p>Puedes recibir pagos presenciales con tarjetas débito y crédito, según la configuración del equipo.</p>
+            </details>
+            <details>
+              <summary>¿Cuánto tarda la entrega?</summary>
+              <p>El tiempo de entrega se confirma según disponibilidad y ciudad registrada en el pedido.</p>
+            </details>
+            <details>
+              <summary>¿Necesito tener cuenta en ePayco?</summary>
+              <p>Sí. El ecosistema ePayco permite gestionar tus pagos, movimientos y soporte del comercio.</p>
+            </details>
+            <details>
+              <summary>¿Puedo comprar más de un datáfono?</summary>
+              <p>Sí. Ajusta la cantidad en el carrito o en el formulario antes de finalizar la compra.</p>
+            </details>
+            <details>
+              <summary>¿Dónde puedo consultar mis ventas?</summary>
+              <p>Podrás consultar tus ventas desde las herramientas de gestión disponibles para comercios ePayco.</p>
+            </details>
           </div>
-          <a class="btn btn-secondary" href="#checkout">Configurar mi pedido</a>
+        </div>
+
+        <div class="faq-visual" data-reveal aria-hidden="true">
+          <div class="yellow-ring"></div>
+          <img src="assets/figma/faq-terminal.png" alt="" />
         </div>
       </section>
 
-      <section class="final-cta section-shell" aria-labelledby="final-title">
-        <div>
-          <span class="eyebrow">Listo para cobrar mejor</span>
-          <h2 id="final-title">Empieza a recibir pagos presenciales con ePayco</h2>
-          <p>Compra tu datáfono y ofrece una experiencia de pago más práctica, rápida y confiable.</p>
-        </div>
-        <a class="btn btn-light" href="#checkout">Comprar mi datáfono</a>
+      <section class="final-cta" aria-labelledby="final-title">
+        <h2 id="final-title" data-reveal>Empieza a recibir pagos presenciales con ePayco</h2>
+        <a class="btn btn-dark" href="#checkout" data-reveal>Comprar mi datáfono</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="section-shell footer-content">
-        <a class="brand" href="#inicio" aria-label="Volver al inicio">
-          <img class="brand-logo" src="assets/epayco-logo.svg" alt="ePayco" />
-        </a>
-        <p>Landing preparada para adaptar imágenes, precios definitivos e integración final de ePayco Checkout.</p>
+      <div class="brand">
+        <img src="assets/epayco-logo.svg" alt="ePayco" />
+        <span></span>
+        <img src="assets/terminal-logo.svg" alt="Terminal" />
       </div>
+      <p>Terminal ePayco. Pagos presenciales para negocios que quieren vender más fácil.</p>
     </footer>
   </body>
 </html>
